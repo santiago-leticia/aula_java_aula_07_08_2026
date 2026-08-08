@@ -11,13 +11,14 @@ import jakarta.validation.constraints.Pattern;
 import java.math.BigDecimal;
 import java.rmi.server.UID;
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
 public class Livro {
     //Como é um id, utilizar um UID
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UID id;
+    private UUID id;
     //nao aceita nem null ou nem vazio
     @NotBlank(message = "O titulo é obrigatorio")
     private String titulo;
@@ -32,11 +33,11 @@ public class Livro {
     private LocalDate dataPublicacao;
     private BigDecimal preco;
 
-    public UID getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(UID id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
