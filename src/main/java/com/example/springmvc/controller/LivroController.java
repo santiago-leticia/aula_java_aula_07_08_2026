@@ -31,7 +31,8 @@ public class LivroController {
     @PostMapping("/cadastrar")
     public String cadastrar(Model model, Livro livro){
         livroService.create(livro);
-
+        //vai ter apenas um dto - vai ter a opcao de editar e excluir.
+        //vai ate a autora
         return "livroListagem";
     }
 }
